@@ -41,17 +41,20 @@ class { 'blender':
 
 The following parameters are available in the `blender` class:
 
-* [`download_version`](#download_version)
+* [`download_versions`](#download_versions)
 * [`download_dependencies`](#download_dependencies)
 * [`download_destination`](#download_destination)
-* [`download_versions`](#download_versions)
 
-##### <a name="download_version"></a>`download_version`
+##### <a name="download_versions"></a>`download_versions`
+
+Data type: `Hash[String, Hash[String, Variant[String, Integer, Boolean]]]`
 
 If not empty, instructs the module to install the
 specified (full) version Blender from the Blender
 website. Attributes in the hash are the parameters for
 the blender::download resource.
+
+Default value: `{ }`
 
 ##### <a name="download_dependencies"></a>`download_dependencies`
 
@@ -72,14 +75,6 @@ Data type: `String`
 The folder where downloaded versions of Blender
 are installed. This parameter has no effect if
 Blender is installed from the package repository.
-
-##### <a name="download_versions"></a>`download_versions`
-
-Data type: `Hash[String, Hash[String, Variant[String, Integer, Boolean]]]`
-
-
-
-Default value: `{ }`
 
 ## Defined types
 

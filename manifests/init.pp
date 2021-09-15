@@ -2,10 +2,10 @@
 #
 # Installs the 3D creation tool Blender.
 #
-# @param download_version If not empty, instructs the module to install the
-#                         specified (full) version Blender from the Blender
-#                         website. Attributes in the hash are the parameters for
-#                         the blender::download resource.
+# @param download_versions If not empty, instructs the module to install the
+#                          specified (full) version Blender from the Blender
+#                          website. Attributes in the hash are the parameters for
+#                          the blender::download resource.
 # @param download_dependencies A list of packages to be installed if Blender is
 #                              downloaded from blender.org. This parameter has
 #                              no effect if Blender is installed from the
