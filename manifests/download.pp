@@ -42,7 +42,7 @@ define blender::download(
     }
     $install_dir = "${destination}/${install_name}"
 
-    archive { $install_dir:
+    archive { "${desintation}/${archive}":
         source => $url,
         extract => true,
         extract_path => $destination,
