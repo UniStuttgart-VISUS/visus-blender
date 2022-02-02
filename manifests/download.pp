@@ -13,7 +13,8 @@ define blender::download(
         Array[String] $dependencies,
         String $destination,
         Optional[String] $source = undef,
-        String $version
+        String $version,
+        String $ensure = 'present'
         ) {
 
     # Install dependencies for Blender.
@@ -43,6 +44,7 @@ define blender::download(
     $install_dir = "${destination}/${install_name}"
 
     archive { "${desintation}/${archive}":
+        ensure => $ensure,
         source => $url,
         extract => true,
         extract_path => $destination,
@@ -52,7 +54,11 @@ define blender::download(
         group => 'root',
     }
     ~> file { "/usr/local/bin/blender-${install_version}":
-        ensure => 'link',
+        ensure => if ($ensure != 'absent') { 
+            'link'
+        } else {
+            $ensure
+        },
         target => "${install_dir}/blender"
     }
 }
