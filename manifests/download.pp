@@ -54,7 +54,7 @@ define blender::download(
         group => 'root',
     }
     ~> file { "/usr/local/bin/blender-${install_version}":
-        ensure => if ($ensure != 'absent') { 
+        ensure => if ($ensure != 'absent') {
             'link'
         } else {
             $ensure

@@ -36,7 +36,7 @@ class blender(
     if (empty($download_versions)) {
         # If no specific version were requested, install from repo.
         blender::repo { 'blender':
-        }        
+        }
 
     } else {
         # Install all of the requested versions from blender.org.
